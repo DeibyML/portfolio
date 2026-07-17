@@ -1,0 +1,251 @@
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Blueprint columns + a warm copper glow behind the name */
+  background:
+    radial-gradient(ellipse 60% 45% at 72% 30%, rgba(217, 138, 87, 0.12), transparent 70%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 calc(100% / 6 - 1px),
+      var(--ink-border) calc(100% / 6 - 1px) calc(100% / 6)
+    );
+}
+
+.inner {
+  width: 100%;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+}
+
+.status {
+  color: var(--cream-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: fade-up 0.8s var(--ease-out) both;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--copper);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+}
+
+.name {
+  font-size: clamp(4rem, 14vw, 11.5rem);
+  margin-block: 1.5rem 1rem;
+
+  .line {
+    display: block;
+    overflow: hidden;
+    /* Room for descenders (y, j) inside the clip used by the rise animation */
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
+  }
+
+  .word {
+    display: inline-block;
+    animation: rise 0.9s var(--ease-out) both;
+  }
+
+  .line:nth-child(2) .word {
+    animation-delay: 0.12s;
+  }
+
+  .italic {
+    font-style: italic;
+    font-weight: 380;
+  }
+
+  .accent {
+    color: var(--copper);
+    font-style: normal;
+  }
+}
+
+.role {
+  color: var(--copper);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  animation: fade-up 0.8s var(--ease-out) 0.35s both;
+}
+
+.intro {
+  max-width: 34rem;
+  margin-block: 1.75rem 2.5rem;
+  font-size: 1.08rem;
+  color: var(--cream-dim);
+  animation: fade-up 0.8s var(--ease-out) 0.45s both;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: fade-up 0.8s var(--ease-out) 0.55s both;
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  padding: 0.9rem 1.6rem;
+  border-radius: 99px;
+  transition:
+    transform 0.3s var(--ease-out),
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &.solid {
+    background: var(--copper);
+    color: var(--ink);
+
+    &:hover {
+      background: var(--cream);
+    }
+  }
+
+  &.ghost {
+    border: 1px solid var(--ink-border);
+    color: var(--cream);
+
+    &:hover {
+      border-color: var(--copper);
+      color: var(--copper);
+    }
+  }
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 5.5rem;
+  right: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--cream-dim);
+  writing-mode: vertical-rl;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+
+  .cue-line {
+    width: 1px;
+    height: 3.5rem;
+    background: var(--cream-dim);
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--copper);
+      transform: translateY(-100%);
+      animation: cue 2s var(--ease-out) infinite;
+    }
+  }
+
+  &:hover {
+    color: var(--copper);
+  }
+}
+
+/* Ticker pinned to the hero's bottom edge */
+.marquee {
+  position: absolute;
+  inset: auto 0 0;
+  border-top: 1px solid var(--ink-border);
+  padding-block: 1rem;
+  overflow: hidden;
+  background: rgba(14, 12, 9, 0.6);
+
+  .track {
+    display: flex;
+    width: max-content;
+    animation: ticker 36s linear infinite;
+  }
+
+  .chunk {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .item {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    padding-inline: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .diamond {
+    color: var(--copper);
+    font-size: 0.55rem;
+    vertical-align: middle;
+    margin-left: 2rem;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 138, 87, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(217, 138, 87, 0);
+  }
+}
+
+@keyframes cue {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .scroll-cue {
+    display: none;
+  }
+}

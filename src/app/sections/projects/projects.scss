@@ -1,0 +1,147 @@
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.sub {
+  color: var(--cream-dim);
+  max-width: 52ch;
+  margin-block: 1rem clamp(2.5rem, 6vh, 4rem);
+}
+
+.list li:last-child .row {
+  border-bottom: 1px solid var(--ink-border);
+}
+
+/* Each project is one large clickable row that inverts to cream on hover */
+.row {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1.4fr) minmax(0, 1fr) 3rem;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.9rem 1rem;
+  border-top: 1px solid var(--ink-border);
+  position: relative;
+  isolation: isolate;
+  transition: color 0.35s;
+
+  /* Cream wash that sweeps up behind the content */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--cream);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s var(--ease-out);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ink);
+
+    &::before {
+      transform: scaleY(1);
+    }
+
+    .idx,
+    .desc,
+    .year {
+      color: rgba(14, 12, 9, 0.6);
+    }
+
+    .tag {
+      border-color: rgba(14, 12, 9, 0.25);
+      color: rgba(14, 12, 9, 0.7);
+    }
+
+    .arrow {
+      color: var(--ink);
+      transform: translate(4px, -4px);
+    }
+  }
+}
+
+.idx {
+  color: var(--copper);
+  transition: color 0.35s;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.name {
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  font-weight: 460;
+}
+
+.desc {
+  color: var(--cream-dim);
+  font-size: 0.92rem;
+  max-width: 48ch;
+  transition: color 0.35s;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.year {
+  color: var(--cream-dim);
+  transition: color 0.35s;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.arrow {
+  font-size: 1.4rem;
+  color: var(--cream-dim);
+  transition:
+    transform 0.35s var(--ease-out),
+    color 0.35s;
+  justify-self: end;
+}
+
+@media (max-width: 760px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr) 2rem;
+    grid-template-areas:
+      'main arrow'
+      'meta meta';
+    row-gap: 1rem;
+  }
+
+  .idx {
+    display: none;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .meta {
+    grid-area: meta;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tags {
+    justify-content: flex-start;
+  }
+
+  .arrow {
+    grid-area: arrow;
+  }
+}

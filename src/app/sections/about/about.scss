@@ -1,0 +1,141 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.bio {
+  .title {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    margin-bottom: 2rem;
+    max-width: 16ch;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: var(--cream-dim);
+    max-width: 56ch;
+
+    + p {
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+.facts {
+  border-left: 1px solid var(--ink-border);
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h3 {
+    color: var(--copper);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.68rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+
+  .value {
+    font-size: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .edu {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .dim {
+    color: var(--cream-dim);
+    font-size: 0.8rem;
+  }
+
+  .dots {
+    display: inline-flex;
+    gap: 3px;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ink-border);
+
+    &.on {
+      background: var(--copper);
+    }
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: clamp(3.5rem, 8vh, 6rem);
+  border-block: 1px solid var(--ink-border);
+
+  .stat {
+    padding: clamp(1.5rem, 3vw, 2.5rem) 1rem;
+    text-align: center;
+
+    + .stat {
+      border-left: 1px solid var(--ink-border);
+    }
+  }
+
+  dt {
+    color: var(--cream-dim);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    color: var(--cream);
+    margin-top: 0.5rem;
+
+    /* Numbers land with a slight stagger as the band reveals */
+    animation: inherit;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facts {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--ink-border);
+    padding-top: 2rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+
+    .stat:nth-child(3) {
+      border-left: none;
+    }
+
+    .stat:nth-child(n + 3) {
+      border-top: 1px solid var(--ink-border);
+    }
+  }
+}

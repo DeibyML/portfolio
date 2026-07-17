@@ -1,0 +1,31 @@
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="index">05</span>
+      <span class="label">{{ i18n.t('contact.label') }}</span>
+      <span class="rule"></span>
+    </div>
+
+    <div class="center">
+      <h2 class="display title" appReveal>{{ i18n.t('contact.title') }}</h2>
+      <p class="body" [appReveal]="120">{{ i18n.t('contact.body') }}</p>
+
+      <a class="cta" [appReveal]="240" [href]="'mailto:' + profile.email">
+        {{ i18n.t('contact.cta') }}
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <ul class="links mono" [appReveal]="360">
+        <li>
+          <a [href]="profile.github" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </li>
+        <li>
+          <a [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </li>
+        <li>
+          <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

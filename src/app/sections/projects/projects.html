@@ -1,0 +1,44 @@
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="index">03</span>
+      <span class="label">{{ i18n.t('proj.label') }}</span>
+      <span class="rule"></span>
+    </div>
+
+    <h2 class="display title" appReveal>{{ i18n.t('proj.title') }}</h2>
+    <p class="sub" appReveal>{{ i18n.t('proj.sub') }}</p>
+
+    <ul class="list">
+      @for (project of projects; track project.repoUrl; let i = $index) {
+        <li appReveal>
+          <a
+            class="row"
+            [href]="project.repoUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="project.name + ' — ' + i18n.t('proj.view')"
+          >
+            <span class="idx mono">0{{ i + 1 }}</span>
+
+            <span class="main">
+              <span class="name display">{{ project.name }}</span>
+              <span class="desc">{{ i18n.t(project.descKey) }}</span>
+            </span>
+
+            <span class="meta">
+              <span class="year mono">{{ project.year }}</span>
+              <span class="tags">
+                @for (tech of project.stack; track tech) {
+                  <span class="tag">{{ tech }}</span>
+                }
+              </span>
+            </span>
+
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

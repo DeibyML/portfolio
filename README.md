@@ -1,59 +1,41 @@
-# Portfolio
+# Deiby Montoya — Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.19.
+Personal portfolio built with **Angular 21** (standalone components, signals, zoneless change detection). Dark editorial design: Fraunces + Archivo + JetBrains Mono, warm ink palette with copper accents.
 
-## Development server
+## Stack & decisions
 
-To start a local development server, run:
+- **Angular 21, zero extra runtime dependencies.** i18n, scroll reveals and the ticker are hand-rolled with signals, `IntersectionObserver` and CSS — no translation or animation library needed at this size.
+- **Runtime i18n (EN / FR / ES).** English keys define the `TranslationKey` type, so a missing translation in any language is a compile error. The language preference persists in `localStorage`.
+- **No router.** Single page, in-page anchors; keeps the bundle at ~48 kB transferred.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Getting started
 
 ```bash
-ng generate component component-name
+npm install
+npm start          # dev server on http://localhost:4200
+npm test           # vitest unit tests
+npm run build      # production build into dist/portfolio
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Project structure
 
-```bash
-ng generate --help
+```
+src/app/
+├── core/i18n/        # translations.ts (EN/FR/ES dictionaries) + I18nService
+├── data/profile.ts   # ALL content: experience, projects, skills, education
+├── layout/           # header (nav + language switcher), footer
+├── sections/         # hero, about, experience, projects, skills, contact
+└── shared/           # reveal directive, language switcher
 ```
 
-## Building
+## Editing content
 
-To build the project run:
+- **Facts** (companies, dates, links, tech tags): edit `src/app/data/profile.ts`.
+- **Copy** (any visible sentence): edit `src/app/core/i18n/translations.ts` in all three languages — the compiler flags anything you miss.
+- **Adding a language:** add its code to `LANGS`, provide a dictionary typed `Record<TranslationKey, string>`, done.
 
-```bash
-ng build
-```
+## Deploy
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Static output — any host works (Netlify, Vercel, Cloudflare Pages, GitHub Pages). Publish directory: `dist/portfolio/browser`.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For GitHub Pages under a subpath, build with `ng build --base-href /<repo-name>/`.

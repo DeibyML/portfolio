@@ -1,0 +1,62 @@
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="index">01</span>
+      <span class="label">{{ i18n.t('about.label') }}</span>
+      <span class="rule"></span>
+    </div>
+
+    <div class="grid">
+      <div class="bio" appReveal>
+        <h2 class="display title">{{ i18n.t('about.title') }}</h2>
+        <p>{{ i18n.t('about.p1') }}</p>
+        <p>{{ i18n.t('about.p2') }}</p>
+      </div>
+
+      <aside class="facts" [appReveal]="150">
+        <div class="fact">
+          <h3 class="mono">{{ i18n.t('about.factsLocation') }}</h3>
+          <p class="value">{{ i18n.t('hero.location') }}</p>
+        </div>
+
+        <div class="fact">
+          <h3 class="mono">{{ i18n.t('about.factsLanguages') }}</h3>
+          <ul>
+            @for (lang of languages; track lang.nameKey) {
+              <li>
+                <span>{{ i18n.t(lang.nameKey) }}</span>
+                <span class="dots" aria-hidden="true">
+                  @for (dot of [1, 2, 3, 4, 5]; track dot) {
+                    <span class="dot" [class.on]="dot <= lang.level"></span>
+                  }
+                </span>
+                <span class="dim">{{ i18n.t(lang.levelKey) }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="fact">
+          <h3 class="mono">{{ i18n.t('about.factsEducation') }}</h3>
+          <ul>
+            @for (entry of education; track entry.school) {
+              <li class="edu">
+                <span>{{ i18n.t(entry.degreeKey) }}</span>
+                <span class="dim">{{ entry.school }} · {{ entry.years }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <dl class="stats" appReveal>
+      @for (stat of stats; track stat.labelKey; let i = $index) {
+        <div class="stat" [style.--i]="i">
+          <dt class="mono">{{ i18n.t(stat.labelKey) }}</dt>
+          <dd class="display">{{ stat.value }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>

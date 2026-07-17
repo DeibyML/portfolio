@@ -1,13 +1,61 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Portfolio</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Deiby Montoya — Senior Fullstack Software Engineer</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Deiby Montoya is a senior fullstack software engineer in Toronto, Canada, building products with Angular and .NET for over 8 years."
+    />
+    <meta name="author" content="Deiby Montoya" />
+    <meta name="theme-color" content="#0e0c09" />
+
+    <!-- Open Graph / social cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Deiby Montoya — Senior Fullstack Software Engineer" />
+    <meta
+      property="og:description"
+      content="Senior fullstack software engineer in Toronto, Canada. Angular, .NET, and 8+ years of shipping products end to end."
+    />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:locale:alternate" content="fr_CA" />
+    <meta property="og:locale:alternate" content="es_CO" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Deiby Montoya",
+        "jobTitle": "Senior Software Developer",
+        "worksFor": { "@type": "Organization", "name": "TripArc" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toronto",
+          "addressCountry": "CA"
+        },
+        "sameAs": ["https://www.linkedin.com/in/deibymontoya-dev", "https://github.com/DeibyML"],
+        "knowsAbout": ["Angular", ".NET", "TypeScript", "C#", "React", "SQL Server", "Azure"],
+        "knowsLanguage": ["es", "en", "fr"]
+      }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Typography: Fraunces (display serif) + Archivo (body) + JetBrains Mono (technical labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..650;1,9..144,300..650&family=Archivo:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

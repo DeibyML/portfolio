@@ -1,0 +1,43 @@
+<header class="site-header" [class.scrolled]="scrolled()">
+  <div class="container inner">
+    <a class="logo display" href="#top" (click)="closeMenu()">DM<span class="accent">.</span></a>
+
+    <nav class="desktop-nav" [attr.aria-label]="i18n.t('a11y.mainNav')">
+      @for (item of nav; track item.href; let i = $index) {
+        <a [href]="item.href">
+          <span class="idx mono">0{{ i + 1 }}</span>
+          {{ i18n.t(item.key) }}
+        </a>
+      }
+    </nav>
+
+    <app-lang-switcher class="desktop-only" />
+
+    <button
+      type="button"
+      class="burger"
+      [class.open]="menuOpen()"
+      (click)="toggleMenu()"
+      aria-controls="mobile-menu"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="i18n.t('a11y.mainNav')"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+@if (menuOpen()) {
+  <div class="menu-overlay" id="mobile-menu">
+    <nav [attr.aria-label]="i18n.t('a11y.mainNav')">
+      @for (item of nav; track item.href; let i = $index) {
+        <a class="display" [href]="item.href" (click)="closeMenu()" [style.--i]="i">
+          <span class="idx mono">0{{ i + 1 }}</span>
+          {{ i18n.t(item.key) }}
+        </a>
+      }
+    </nav>
+    <app-lang-switcher />
+  </div>
+}
