@@ -194,7 +194,8 @@ img {
 /* ---------- Scroll-driven section transitions ---------- */
 
 /*
- * Each section eases in (opacity + rise) tied directly to scroll position.
+ * Each section fades in tied directly to scroll position. Opacity only:
+ * transforms here would visibly shift borders and margins mid-scroll.
  * Progressive enhancement: browsers without scroll timelines simply show
  * sections static, and the element-level reveals below still run.
  */
@@ -208,12 +209,10 @@ img {
 
 @keyframes section-enter {
   from {
-    opacity: 0.3;
-    transform: translateY(34px) scale(0.988);
+    opacity: 0.25;
   }
   to {
     opacity: 1;
-    transform: none;
   }
 }
 

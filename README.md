@@ -51,3 +51,28 @@ Every background, border, glow and hover state is computed from these via `rgb()
 Static output — any host works (Netlify, Vercel, Cloudflare Pages, GitHub Pages). Publish directory: `dist/portfolio/browser`.
 
 For GitHub Pages under a subpath, build with `ng build --base-href /<repo-name>/`.
+
+## Publishing on a custom domain (cheap)
+
+The site is fully static, so hosting is free; the only cost is the domain (~US$10-12/year). Recommended setup: **Cloudflare Pages** (free unlimited bandwidth, global CDN, automatic HTTPS).
+
+1. **Push the repo to GitHub:**
+
+   ```bash
+   git remote add origin https://github.com/DeibyML/portfolio.git
+   git push -u origin main
+   ```
+
+2. **Buy the domain** at Cloudflare Registrar (at-cost pricing, no renewal markup) or Porkbun / Namecheap.
+
+3. **Create the Pages project:** Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → pick this repo, then:
+   - Build command: `npm run build`
+   - Output directory: `dist/portfolio/browser`
+
+4. **Attach the domain:** in the Pages project → Custom domains → add `yourdomain.com`. If the domain lives on Cloudflare, DNS and the HTTPS certificate configure themselves in minutes.
+
+5. From then on, **every `git push` deploys automatically**. No servers, no maintenance.
+
+Want to try before buying a domain? Step 3 already gives you a free `*.pages.dev` URL.
+
+There is no router in this app, so no SPA redirect config is needed. If you ever add routes, create a `_redirects` file containing `/* /index.html 200`.
