@@ -29,17 +29,6 @@
   --flag-white: #f4f0e8;
   --flag-red: #c8102e;
   --flag-yellow: #f2c437;
-}
-
-/*
- * Light theme: the same three-token system with inverted roles.
- * "ink" becomes warm paper, "cream" becomes dark ink text, and copper
- * deepens for contrast. Everything else derives automatically.
- */
-:root[data-theme='light'] {
-  --ink-rgb: 246, 241, 233;
-  --cream-rgb: 28, 24, 18;
-  --copper-rgb: 168, 88, 40;
 
   /* Typography */
   --font-display: 'Fraunces', 'Georgia', serif;
@@ -53,6 +42,17 @@
 
   /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
+ * Light theme: the same three-token system with inverted roles.
+ * "ink" becomes warm paper, "cream" becomes dark ink text, and copper
+ * deepens for contrast. Everything else derives automatically.
+ */
+:root[data-theme='light'] {
+  --ink-rgb: 246, 241, 233;
+  --cream-rgb: 28, 24, 18;
+  --copper-rgb: 168, 88, 40;
 }
 
 * {
