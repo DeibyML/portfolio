@@ -23,8 +23,13 @@ export interface Project {
   name: string;
   year: number;
   descKey: TranslationKey;
-  repoUrl: string;
+  /** Omitted for private / not-yet-published work. */
+  repoUrl?: string;
   stack: string[];
+  /** Renders as the large spotlight card above the project list. */
+  featured?: boolean;
+  /** Shows an "in development" badge. */
+  wip?: boolean;
 }
 
 export interface SkillGroup {
@@ -45,6 +50,7 @@ export const PROFILE = {
   email: 'deiby.sk@hotmail.com',
   github: 'https://github.com/DeibyML',
   linkedin: 'https://www.linkedin.com/in/deibymontoya-dev',
+  calendly: 'https://calendly.com/deiby',
   careerStart: 2017,
 } as const;
 
@@ -83,7 +89,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     end: 2020,
     roleKey: 'exp.novatec.role',
     summaryKey: 'exp.novatec.summary',
-    stack: ['Angular', 'TypeScript'],
+    stack: ['Angular', 'TypeScript', 'Python'],
   },
   {
     company: 'Fitideas',
@@ -97,15 +103,33 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     company: 'Colvatel',
     location: 'Bogotá, Colombia',
-    start: 2017,
+    start: 2018,
     end: 2019,
     roleKey: 'exp.colvatel.role',
     summaryKey: 'exp.colvatel.summary',
-    stack: ['Angular', '.NET Core', 'Ionic'],
+    stack: ['Angular', 'Ionic', 'C#', 'MongoDB', 'SQL Server'],
+  },
+  {
+    company: 'ITEHL Consulting',
+    location: 'Bogotá, Colombia',
+    start: 2017,
+    end: 2018,
+    roleKey: 'exp.itehl.role',
+    summaryKey: 'exp.itehl.summary',
+    stack: ['.NET Core', 'Angular', 'SQL Server'],
   },
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    // Flagship side project — private for now; tweak desc/stack/link as it evolves.
+    name: 'LangGrade',
+    year: 2026,
+    descKey: 'proj.langgrade.desc',
+    stack: ['AI', 'Angular', 'TypeScript'],
+    featured: true,
+    wip: true,
+  },
   {
     name: 'Warehouse Management System',
     year: 2025,
@@ -169,6 +193,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: '.NET Core / C#', level: 5 },
       { name: 'Entity Framework', level: 4 },
       { name: 'Blazor', level: 4 },
+      { name: 'Python' },
       { name: 'Node.js' },
       { name: 'GraphQL' },
       { name: 'REST APIs' },
@@ -192,10 +217,10 @@ export const SKILL_GROUPS: SkillGroup[] = [
 ];
 
 export const EDUCATION: EducationEntry[] = [
-  { school: 'Lambton College — ON, Canada', years: '2021 – 2023', degreeKey: 'edu.lambton' },
-  { school: 'U. Jorge Tadeo Lozano — Colombia', years: '2017 – 2020', degreeKey: 'edu.tadeo' },
-  { school: 'Fedesoft — Colombia', years: '2018', degreeKey: 'edu.fedesoft' },
-  { school: 'SENA — Colombia', years: '2015 – 2017', degreeKey: 'edu.sena' },
+  { school: 'Lambton College · ON, Canada', years: '2021 - 2023', degreeKey: 'edu.lambton' },
+  { school: 'U. Jorge Tadeo Lozano · Colombia', years: '2017 - 2020', degreeKey: 'edu.tadeo' },
+  { school: 'Fedesoft · Colombia', years: '2018', degreeKey: 'edu.fedesoft' },
+  { school: 'SENA · Colombia', years: '2014 - 2016', degreeKey: 'edu.sena' },
 ];
 
 /** Tech ticker shown in the hero marquee; order tells the story of the stack. */

@@ -28,6 +28,18 @@ src/app/
 └── shared/           # reveal directive, language switcher
 ```
 
+## Theming
+
+The whole palette derives from three RGB triplets at the top of `src/styles.scss`:
+
+```scss
+--ink-rgb: 14, 12, 9; /* page background */
+--cream-rgb: 237, 230, 218; /* text */
+--copper-rgb: 217, 138, 87; /* accent */
+```
+
+Every background, border, glow and hover state is computed from these via `rgb()` / `rgba()` / `color-mix()`, so changing the three triplets re-themes the entire site. Flag-chip colors live next to them as `--flag-*` tokens.
+
 ## Editing content
 
 - **Facts** (companies, dates, links, tech tags): edit `src/app/data/profile.ts`.

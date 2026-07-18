@@ -2,15 +2,18 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { PROJECTS } from '../../data/profile';
 import { RevealDirective } from '../../shared/reveal.directive';
+import { SectionHeading } from '../../shared/section-heading';
 
 @Component({
   selector: 'app-projects',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective],
+  imports: [RevealDirective, SectionHeading],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
 export class Projects {
   protected readonly i18n = inject(I18nService);
-  protected readonly projects = PROJECTS;
+
+  protected readonly featured = PROJECTS.filter((p) => p.featured);
+  protected readonly list = PROJECTS.filter((p) => !p.featured);
 }

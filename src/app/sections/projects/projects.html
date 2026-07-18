@@ -1,23 +1,49 @@
 <section class="section" id="projects">
   <div class="container">
-    <div class="section-head" appReveal>
-      <span class="index">03</span>
-      <span class="label">{{ i18n.t('proj.label') }}</span>
-      <span class="rule"></span>
-    </div>
+    <app-section-heading index="03" labelKey="proj.label" />
 
     <h2 class="display title" appReveal>{{ i18n.t('proj.title') }}</h2>
     <p class="sub" appReveal>{{ i18n.t('proj.sub') }}</p>
 
+    <!-- Spotlight card(s) for flagship work -->
+    @for (project of featured; track project.name) {
+      <article class="featured" appReveal>
+        <div class="featured-head mono">
+          <span class="featured-label">✦ {{ i18n.t('proj.featured') }}</span>
+          @if (project.wip) {
+            <span class="wip">{{ i18n.t('proj.wip') }}</span>
+          }
+        </div>
+
+        <div class="featured-body">
+          <h3 class="display name">{{ project.name }}</h3>
+          <p class="desc">{{ i18n.t(project.descKey) }}</p>
+        </div>
+
+        <div class="featured-foot">
+          <span class="tags">
+            @for (tech of project.stack; track tech) {
+              <span class="tag">{{ tech }}</span>
+            }
+          </span>
+          @if (project.repoUrl) {
+            <a class="mono link" [href]="project.repoUrl" target="_blank" rel="noopener noreferrer">
+              {{ i18n.t('proj.view') }} ↗
+            </a>
+          }
+        </div>
+      </article>
+    }
+
     <ul class="list">
-      @for (project of projects; track project.repoUrl; let i = $index) {
+      @for (project of list; track project.name; let i = $index) {
         <li appReveal>
           <a
             class="row"
             [href]="project.repoUrl"
             target="_blank"
             rel="noopener noreferrer"
-            [attr.aria-label]="project.name + ' — ' + i18n.t('proj.view')"
+            [attr.aria-label]="project.name + ': ' + i18n.t('proj.view')"
           >
             <span class="idx mono">0{{ i + 1 }}</span>
 

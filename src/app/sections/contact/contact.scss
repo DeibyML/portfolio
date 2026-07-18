@@ -2,7 +2,7 @@
   /* Closing glow mirrors the hero so the page ends where it began */
   background: radial-gradient(
     ellipse 55% 50% at 50% 100%,
-    rgba(217, 138, 87, 0.1),
+    rgba(var(--copper-rgb), 0.1),
     transparent 70%
   );
 }
@@ -24,6 +24,34 @@
   color: var(--cream-dim);
   max-width: 46ch;
   margin-block: 1.75rem 2.75rem;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.cta-ghost {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  padding: 1rem 1.8rem;
+  border-radius: 99px;
+  border: 1px solid var(--ink-border);
+  color: var(--cream);
+  transition:
+    border-color 0.3s,
+    color 0.3s,
+    transform 0.3s var(--ease-out);
+
+  &:hover {
+    border-color: var(--copper);
+    color: var(--copper);
+    transform: translateY(-2px);
+  }
 }
 
 .cta {
@@ -49,7 +77,7 @@
   &:hover {
     background: var(--cream);
     transform: translateY(-3px);
-    box-shadow: 0 18px 40px -18px rgba(217, 138, 87, 0.55);
+    box-shadow: 0 18px 40px -18px rgba(var(--copper-rgb), 0.55);
 
     span {
       transform: translateX(5px);

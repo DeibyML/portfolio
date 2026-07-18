@@ -8,7 +8,7 @@
   border-bottom: 1px solid transparent;
 
   &.scrolled {
-    background: rgba(14, 12, 9, 0.82);
+    background: rgba(var(--ink-rgb), 0.82);
     backdrop-filter: blur(12px);
     border-bottom-color: var(--ink-border);
   }

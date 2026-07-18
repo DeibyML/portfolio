@@ -2,7 +2,9 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslationKey } from '../../core/i18n/translations';
 import { EDUCATION, EXPERIENCE, PROFILE } from '../../data/profile';
+import { DotMeter } from '../../shared/dot-meter';
 import { RevealDirective } from '../../shared/reveal.directive';
+import { SectionHeading } from '../../shared/section-heading';
 
 interface LanguageFact {
   nameKey: TranslationKey;
@@ -14,7 +16,7 @@ interface LanguageFact {
 @Component({
   selector: 'app-about',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective],
+  imports: [RevealDirective, SectionHeading, DotMeter],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
@@ -25,7 +27,7 @@ export class About {
   protected readonly languages: LanguageFact[] = [
     { nameKey: 'about.langEs', levelKey: 'about.levelEs', level: 5 },
     { nameKey: 'about.langEn', levelKey: 'about.levelEn', level: 4 },
-    { nameKey: 'about.langFr', levelKey: 'about.levelFr', level: 1 },
+    { nameKey: 'about.langFr', levelKey: 'about.levelFr', level: 4 },
   ];
 
   /** Headline numbers, derived from the data rather than hardcoded. */

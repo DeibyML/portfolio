@@ -65,22 +65,6 @@
     color: var(--cream-dim);
     font-size: 0.8rem;
   }
-
-  .dots {
-    display: inline-flex;
-    gap: 3px;
-  }
-
-  .dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--ink-border);
-
-    &.on {
-      background: var(--copper);
-    }
-  }
 }
 
 .stats {

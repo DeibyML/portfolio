@@ -1,10 +1,6 @@
 <section class="section" id="skills">
   <div class="container">
-    <div class="section-head" appReveal>
-      <span class="index">04</span>
-      <span class="label">{{ i18n.t('skills.label') }}</span>
-      <span class="rule"></span>
-    </div>
+    <app-section-heading index="04" labelKey="skills.label" />
 
     <h2 class="display title" appReveal>{{ i18n.t('skills.title') }}</h2>
 
@@ -17,11 +13,8 @@
               <li>
                 <span class="name">{{ skill.name }}</span>
                 @if (skill.level) {
-                  <span class="meter" aria-hidden="true">
-                    @for (dot of [1, 2, 3, 4, 5]; track dot) {
-                      <span class="dot" [class.on]="dot <= skill.level"></span>
-                    }
-                  </span>
+                  <span class="sr-only">{{ skill.level }}/5</span>
+                  <app-dot-meter class="meter" [level]="skill.level" />
                 }
               </li>
             }

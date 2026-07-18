@@ -5,14 +5,30 @@
  */
 
 :root {
-  /* Palette */
-  --ink: #0e0c09;
-  --ink-raised: #161310;
-  --ink-border: rgba(237, 230, 218, 0.1);
-  --cream: #ede6da;
-  --cream-dim: #9b9285;
-  --copper: #d98a57;
-  --copper-soft: rgba(217, 138, 87, 0.14);
+  /*
+   * Palette: three RGB triplets are the single source of truth.
+   * Change them and every color on the site (backgrounds, borders,
+   * glows, hover states) follows, because everything below derives
+   * from them via rgb()/rgba()/color-mix.
+   */
+  --ink-rgb: 14, 12, 9; /* page background */
+  --cream-rgb: 237, 230, 218; /* text */
+  --copper-rgb: 217, 138, 87; /* accent */
+
+  /* Derived colors: reference these in components, never raw values */
+  --ink: rgb(var(--ink-rgb));
+  --ink-raised: color-mix(in srgb, var(--ink) 96%, var(--cream));
+  --ink-border: rgba(var(--cream-rgb), 0.1);
+  --cream: rgb(var(--cream-rgb));
+  --cream-dim: color-mix(in srgb, var(--cream) 62%, var(--ink));
+  --copper: rgb(var(--copper-rgb));
+  --copper-soft: rgba(var(--copper-rgb), 0.14);
+
+  /* Language-switcher flag chips (color-only flags) */
+  --flag-blue: #1a3a8f;
+  --flag-white: #f4f0e8;
+  --flag-red: #c8102e;
+  --flag-yellow: #f2c437;
 
   /* Typography */
   --font-display: 'Fraunces', 'Georgia', serif;
@@ -181,6 +197,19 @@ img {
 }
 
 /* ---------- Accessibility ---------- */
+
+/* Visually hidden but announced by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
 
 .skip-link {
   position: fixed;

@@ -1,10 +1,6 @@
 <section class="section" id="about">
   <div class="container">
-    <div class="section-head" appReveal>
-      <span class="index">01</span>
-      <span class="label">{{ i18n.t('about.label') }}</span>
-      <span class="rule"></span>
-    </div>
+    <app-section-heading index="01" labelKey="about.label" />
 
     <div class="grid">
       <div class="bio" appReveal>
@@ -25,11 +21,7 @@
             @for (lang of languages; track lang.nameKey) {
               <li>
                 <span>{{ i18n.t(lang.nameKey) }}</span>
-                <span class="dots" aria-hidden="true">
-                  @for (dot of [1, 2, 3, 4, 5]; track dot) {
-                    <span class="dot" [class.on]="dot <= lang.level"></span>
-                  }
-                </span>
+                <app-dot-meter [level]="lang.level" />
                 <span class="dim">{{ i18n.t(lang.levelKey) }}</span>
               </li>
             }

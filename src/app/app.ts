@@ -15,9 +15,9 @@ import { Skills } from './sections/skills/skills';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [Header, Hero, About, Experience, Projects, Skills, Contact, Footer],
   template: `
-    <a class="skip-link" href="#about">{{ i18n.t('a11y.skip') }}</a>
+    <a class="skip-link" href="#main">{{ i18n.t('a11y.skip') }}</a>
     <app-header />
-    <main>
+    <main id="main" tabindex="-1">
       <app-hero />
       <app-about />
       <app-experience />
