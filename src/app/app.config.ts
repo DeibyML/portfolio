@@ -1,9 +1,14 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 
 /**
- * Single-page site: no router needed — navigation is pure in-page anchors,
- * which keeps the bundle lean and scrolling native.
+ * Zoneless by design: change detection is driven purely by signals,
+ * so zone.js never ships. No router either; navigation is in-page
+ * anchors, which keeps the bundle lean and scrolling native.
  */
 export const appConfig: ApplicationConfig = {
-  providers: [provideBrowserGlobalErrorListeners()],
+  providers: [provideZonelessChangeDetection(), provideBrowserGlobalErrorListeners()],
 };

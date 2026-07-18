@@ -71,14 +71,14 @@ import { I18nService } from '../core/i18n/i18n.service';
       transition: opacity 0.25s;
     }
 
-    /* United Kingdom, reduced to its three colors */
+    /* United Kingdom: red cross with white fimbriation on blue */
     .flag-en {
-      background: linear-gradient(
-        180deg,
-        var(--flag-blue) 33.3%,
-        var(--flag-white) 33.3% 66.6%,
-        var(--flag-red) 66.6%
-      );
+      background:
+        linear-gradient(90deg, transparent 43%, var(--flag-red) 43% 57%, transparent 57%),
+        linear-gradient(180deg, transparent 36%, var(--flag-red) 36% 64%, transparent 64%),
+        linear-gradient(90deg, transparent 33%, var(--flag-white) 33% 67%, transparent 67%),
+        linear-gradient(180deg, transparent 24%, var(--flag-white) 24% 76%, transparent 76%),
+        var(--flag-blue);
     }
 
     /* France: vertical tricolore */

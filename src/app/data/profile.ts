@@ -25,6 +25,8 @@ export interface Project {
   descKey: TranslationKey;
   /** Omitted for private / not-yet-published work. */
   repoUrl?: string;
+  /** Live product URL, when the project is deployed. */
+  liveUrl?: string;
   stack: string[];
   /** Renders as the large spotlight card above the project list. */
   featured?: boolean;
@@ -122,13 +124,13 @@ export const EXPERIENCE: ExperienceEntry[] = [
 
 export const PROJECTS: Project[] = [
   {
-    // Flagship side project — private for now; tweak desc/stack/link as it evolves.
+    // Flagship side project, live at langgrade.com
     name: 'LangGrade',
     year: 2026,
     descKey: 'proj.langgrade.desc',
-    stack: ['AI', 'Angular', 'TypeScript'],
+    liveUrl: 'https://langgrade.com',
+    stack: ['AI', 'CELPIP', 'TEF Canada', 'TCF Canada'],
     featured: true,
-    wip: true,
   },
   {
     name: 'Warehouse Management System',

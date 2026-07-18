@@ -18,6 +18,7 @@ const en = {
   'a11y.mainNav': 'Main navigation',
   'a11y.menu': 'Menu',
   'a11y.langSwitcher': 'Site language',
+  'a11y.theme': 'Toggle color theme',
 
   // Navigation
   'nav.about': 'About',
@@ -91,10 +92,11 @@ const en = {
   'proj.sub':
     'Selected personal work. The production code lives in private repos, but these show how I think.',
   'proj.view': 'View on GitHub',
+  'proj.visit': 'Visit site',
   'proj.featured': 'Featured',
   'proj.wip': 'In development',
   'proj.langgrade.desc':
-    'AI-powered language-learning platform: automated proficiency grading and personalized feedback across languages. Born from my own journey to French fluency.',
+    'AI practice platform for Canadian language exams (CELPIP, TEF, TCF): speaking and writing graded in real time against official rubrics, with CLB score tracking and spaced-repetition vocabulary. Born from my own journey to French fluency.',
   'proj.wms.desc':
     'Inventory management system with products, customers and purchase orders, built on the MERN stack with TypeScript.',
   'proj.contacts.desc':
@@ -140,6 +142,7 @@ const fr: Record<TranslationKey, string> = {
   'a11y.mainNav': 'Navigation principale',
   'a11y.menu': 'Menu',
   'a11y.langSwitcher': 'Langue du site',
+  'a11y.theme': 'Changer de thème',
 
   'nav.about': 'À propos',
   'nav.experience': 'Parcours',
@@ -207,10 +210,11 @@ const fr: Record<TranslationKey, string> = {
   'proj.sub':
     'Une sélection de projets personnels. Le code de production vit dans des dépôts privés, mais ceux-ci montrent ma façon de penser.',
   'proj.view': 'Voir sur GitHub',
+  'proj.visit': 'Voir le site',
   'proj.featured': 'À la une',
   'proj.wip': 'En développement',
   'proj.langgrade.desc':
-    'Plateforme d’apprentissage des langues propulsée par l’IA : évaluation automatique du niveau et retours personnalisés, toutes langues confondues. Née de mon propre chemin vers un français courant.',
+    'Plateforme d’entraînement par IA aux examens de langue canadiens (CELPIP, TEF, TCF) : expression orale et écrite évaluées en temps réel selon les grilles officielles, avec suivi des niveaux CLB et vocabulaire à répétition espacée. Née de mon propre chemin vers un français courant.',
   'proj.wms.desc':
     'Système de gestion d’inventaire avec produits, clients et bons de commande, construit sur la stack MERN en TypeScript.',
   'proj.contacts.desc':
@@ -251,6 +255,7 @@ const es: Record<TranslationKey, string> = {
   'a11y.mainNav': 'Navegación principal',
   'a11y.menu': 'Menú',
   'a11y.langSwitcher': 'Idioma del sitio',
+  'a11y.theme': 'Cambiar tema',
 
   'nav.about': 'Sobre mí',
   'nav.experience': 'Experiencia',
@@ -318,10 +323,11 @@ const es: Record<TranslationKey, string> = {
   'proj.sub':
     'Trabajo personal seleccionado. El código de producción vive en repositorios privados, pero estos muestran cómo pienso.',
   'proj.view': 'Ver en GitHub',
+  'proj.visit': 'Ver el sitio',
   'proj.featured': 'Destacado',
   'proj.wip': 'En desarrollo',
   'proj.langgrade.desc':
-    'Plataforma de aprendizaje de idiomas impulsada por IA: evaluación automática del nivel y retroalimentación personalizada en varios idiomas. Nacida de mi propio camino hacia la fluidez en francés.',
+    'Plataforma de práctica con IA para los exámenes de idiomas de Canadá (CELPIP, TEF, TCF): expresión oral y escrita calificadas en tiempo real con las rúbricas oficiales, con seguimiento de niveles CLB y vocabulario de repetición espaciada. Nacida de mi propio camino hacia la fluidez en francés.',
   'proj.wms.desc':
     'Sistema de gestión de inventario con productos, clientes y órdenes de compra, construido sobre el stack MERN con TypeScript.',
   'proj.contacts.desc':

@@ -26,11 +26,28 @@
               <span class="tag">{{ tech }}</span>
             }
           </span>
-          @if (project.repoUrl) {
-            <a class="mono link" [href]="project.repoUrl" target="_blank" rel="noopener noreferrer">
-              {{ i18n.t('proj.view') }} ↗
-            </a>
-          }
+          <span class="links">
+            @if (project.liveUrl) {
+              <a
+                class="mono link"
+                [href]="project.liveUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ i18n.t('proj.visit') }} ↗
+              </a>
+            }
+            @if (project.repoUrl) {
+              <a
+                class="mono link"
+                [href]="project.repoUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ i18n.t('proj.view') }} ↗
+              </a>
+            }
+          </span>
         </div>
       </article>
     }

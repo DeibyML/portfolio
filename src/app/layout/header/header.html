@@ -12,6 +12,7 @@
     </nav>
 
     <app-lang-switcher class="desktop-only" />
+    <app-theme-toggle />
 
     <button
       type="button"
@@ -26,6 +27,9 @@
       <span></span>
     </button>
   </div>
+
+  <!-- Reading progress, scaled by scroll position -->
+  <span class="progress" aria-hidden="true" [style.transform]="'scaleX(' + progress() + ')'"></span>
 </header>
 
 @if (menuOpen()) {

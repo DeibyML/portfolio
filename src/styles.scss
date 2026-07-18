@@ -29,6 +29,17 @@
   --flag-white: #f4f0e8;
   --flag-red: #c8102e;
   --flag-yellow: #f2c437;
+}
+
+/*
+ * Light theme: the same three-token system with inverted roles.
+ * "ink" becomes warm paper, "cream" becomes dark ink text, and copper
+ * deepens for contrast. Everything else derives automatically.
+ */
+:root[data-theme='light'] {
+  --ink-rgb: 246, 241, 233;
+  --cream-rgb: 28, 24, 18;
+  --copper-rgb: 168, 88, 40;
 
   /* Typography */
   --font-display: 'Fraunces', 'Georgia', serif;
@@ -180,6 +191,32 @@ img {
     border-color 0.3s;
 }
 
+/* ---------- Scroll-driven section transitions ---------- */
+
+/*
+ * Each section eases in (opacity + rise) tied directly to scroll position.
+ * Progressive enhancement: browsers without scroll timelines simply show
+ * sections static, and the element-level reveals below still run.
+ */
+@supports (animation-timeline: view()) {
+  .section {
+    animation: section-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+@keyframes section-enter {
+  from {
+    opacity: 0.3;
+    transform: translateY(34px) scale(0.988);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- Scroll reveal (paired with the appReveal directive) ---------- */
 
 .reveal {
@@ -246,5 +283,9 @@ img {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .section {
+    animation: none;
   }
 }

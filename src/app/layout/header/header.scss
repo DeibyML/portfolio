@@ -14,6 +14,16 @@
   }
 }
 
+/* Thin reading-progress bar along the header's bottom edge */
+.progress {
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: var(--copper);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
 .inner {
   display: flex;
   align-items: center;
@@ -134,7 +144,12 @@
     display: none;
   }
 
+  app-theme-toggle {
+    margin-left: auto;
+  }
+
   .burger {
     display: flex;
+    margin-left: 0;
   }
 }
