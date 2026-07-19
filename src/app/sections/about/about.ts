@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslationKey } from '../../core/i18n/translations';
 import { EDUCATION, EXPERIENCE, PROFILE } from '../../data/profile';
+import { CountupDirective } from '../../shared/countup.directive';
 import { DotMeter } from '../../shared/dot-meter';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { SectionHeading } from '../../shared/section-heading';
@@ -16,7 +17,7 @@ interface LanguageFact {
 @Component({
   selector: 'app-about',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective, SectionHeading, DotMeter],
+  imports: [RevealDirective, SectionHeading, DotMeter, CountupDirective],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })

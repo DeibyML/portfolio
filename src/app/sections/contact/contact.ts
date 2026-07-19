@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { PROFILE } from '../../data/profile';
+import { MagneticDirective } from '../../shared/magnetic.directive';
+import { Particles } from '../../shared/particles';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { SectionHeading } from '../../shared/section-heading';
 
 @Component({
   selector: 'app-contact',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective, SectionHeading],
+  imports: [RevealDirective, SectionHeading, Particles, MagneticDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

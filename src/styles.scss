@@ -122,6 +122,13 @@ img {
   border-radius: 2px;
 }
 
+/* The custom cursor replaces the native one (set by the Cursor component
+   on fine-pointer desktops only) */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none;
+}
+
 /* ---------- Shared layout primitives ---------- */
 
 .container {

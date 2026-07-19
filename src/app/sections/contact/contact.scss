@@ -5,6 +5,12 @@
     rgba(var(--copper-rgb), 0.1),
     transparent 70%
   );
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .center {

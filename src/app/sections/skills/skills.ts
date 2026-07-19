@@ -4,11 +4,12 @@ import { SKILL_GROUPS } from '../../data/profile';
 import { DotMeter } from '../../shared/dot-meter';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { SectionHeading } from '../../shared/section-heading';
+import { Constellation } from './constellation';
 
 @Component({
   selector: 'app-skills',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective, SectionHeading, DotMeter],
+  imports: [RevealDirective, SectionHeading, DotMeter, Constellation],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })

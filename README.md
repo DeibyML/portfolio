@@ -4,7 +4,8 @@ Personal portfolio built with **Angular 21** (standalone components, signals, zo
 
 ## Stack & decisions
 
-- **Angular 21, zero extra runtime dependencies.** i18n, scroll reveals and the ticker are hand-rolled with signals, `IntersectionObserver` and CSS — no translation or animation library needed at this size.
+- **Angular 21, one runtime dependency: `three`.** It renders the hero's wireframe piece and is dynamically imported only on WebGL-capable devices, so it ships as a lazy chunk and never weighs on the initial bundle. Everything else — i18n, scroll reveals, particles, the skills constellation, custom cursor, magnetism, tilt — is hand-rolled with signals, canvas 2D, `IntersectionObserver` and CSS.
+- **One shared rAF loop** (`MotionService`) drives every animated piece outside Angular change detection; each canvas pauses when off screen, and the whole motion layer degrades cleanly on mobile, coarse pointers and `prefers-reduced-motion`.
 - **Runtime i18n (EN / FR / ES).** English keys define the `TranslationKey` type, so a missing translation in any language is a compile error. The language preference persists in `localStorage`.
 - **No router.** Single page, in-page anchors; keeps the bundle at ~48 kB transferred.
 

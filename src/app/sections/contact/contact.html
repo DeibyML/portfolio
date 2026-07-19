@@ -1,4 +1,5 @@
 <section class="section contact" id="contact">
+  <app-particles />
   <div class="container">
     <app-section-heading index="05" labelKey="contact.label" />
 
@@ -7,11 +8,17 @@
       <p class="body" [appReveal]="120">{{ i18n.t('contact.body') }}</p>
 
       <div class="ctas" [appReveal]="240">
-        <a class="cta" [href]="'mailto:' + profile.email">
+        <a class="cta" [href]="'mailto:' + profile.email" appMagnetic>
           {{ i18n.t('contact.cta') }}
           <span aria-hidden="true">→</span>
         </a>
-        <a class="cta-ghost" [href]="profile.calendly" target="_blank" rel="noopener noreferrer">
+        <a
+          class="cta-ghost"
+          [href]="profile.calendly"
+          target="_blank"
+          rel="noopener noreferrer"
+          appMagnetic
+        >
           {{ i18n.t('contact.ctaCall') }} ↗
         </a>
       </div>

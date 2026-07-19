@@ -46,7 +46,7 @@
       @for (stat of stats; track stat.labelKey; let i = $index) {
         <div class="stat" [style.--i]="i">
           <dt class="mono">{{ i18n.t(stat.labelKey) }}</dt>
-          <dd class="display">{{ stat.value }}</dd>
+          <dd class="display" [appCountup]="stat.value"></dd>
         </div>
       }
     </dl>

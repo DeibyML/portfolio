@@ -8,12 +8,13 @@ import { Experience } from './sections/experience/experience';
 import { Hero } from './sections/hero/hero';
 import { Projects } from './sections/projects/projects';
 import { Skills } from './sections/skills/skills';
+import { Cursor } from './shared/cursor';
 
 /** Single-page shell: fixed header, storytelling sections, footer. */
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [Header, Hero, About, Experience, Projects, Skills, Contact, Footer],
+  imports: [Header, Hero, About, Experience, Projects, Skills, Contact, Footer, Cursor],
   template: `
     <a class="skip-link" href="#main">{{ i18n.t('a11y.skip') }}</a>
     <app-header />
@@ -26,6 +27,7 @@ import { Skills } from './sections/skills/skills';
       <app-contact />
     </main>
     <app-footer />
+    <app-cursor />
   `,
 })
 export class App {

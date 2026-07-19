@@ -4,6 +4,8 @@
 
     <h2 class="display title" appReveal>{{ i18n.t('skills.title') }}</h2>
 
+    <app-constellation appReveal />
+
     <div class="grid">
       @for (group of groups; track group.labelKey; let i = $index) {
         <article class="card" [appReveal]="i * 100">

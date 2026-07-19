@@ -24,6 +24,25 @@
   &:hover {
     border-color: rgba(var(--copper-rgb), 0.6);
   }
+
+  /* Copper glow chasing the cursor while the card tilts (vars set by appTilt) */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      circle 340px at var(--glow-x, 50%) var(--glow-y, 50%),
+      rgba(var(--copper-rgb), 0.16),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 .featured-head {
@@ -141,7 +160,13 @@
 
     .arrow {
       color: var(--ink);
-      transform: translate(4px, -4px);
+      transform: translateX(6px) rotate(45deg);
+    }
+
+    /* Content rides the cream wash */
+    .main,
+    .meta {
+      transform: translateX(8px);
     }
   }
 }
@@ -155,6 +180,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+}
+
+.main,
+.meta {
+  transition: transform 0.35s var(--ease-out);
 }
 
 .name {

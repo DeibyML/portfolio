@@ -7,7 +7,7 @@
 
     <!-- Spotlight card(s) for flagship work -->
     @for (project of featured; track project.name) {
-      <article class="featured" appReveal>
+      <article class="featured" appReveal appTilt>
         <div class="featured-head mono">
           <span class="featured-label">✦ {{ i18n.t('proj.featured') }}</span>
           @if (project.wip) {

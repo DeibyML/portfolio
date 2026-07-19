@@ -1,4 +1,7 @@
 <section class="hero" id="top">
+  <app-particles />
+  <app-hero-scene class="scene" />
+
   <div class="container inner">
     <p class="status mono">
       <span class="dot" aria-hidden="true"></span>
@@ -17,8 +20,8 @@
     <p class="intro">{{ i18n.t('hero.intro') }}</p>
 
     <div class="ctas">
-      <a class="btn solid" href="#projects">{{ i18n.t('hero.ctaProjects') }}</a>
-      <a class="btn ghost" href="#contact">{{ i18n.t('hero.ctaContact') }}</a>
+      <a class="btn solid" href="#projects" appMagnetic>{{ i18n.t('hero.ctaProjects') }}</a>
+      <a class="btn ghost" href="#contact" appMagnetic>{{ i18n.t('hero.ctaContact') }}</a>
     </div>
   </div>
 
