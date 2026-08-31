@@ -123,6 +123,7 @@ export class HeroScene {
         transparent: true,
         opacity: 0.62,
         depthWrite: false,
+        depthTest: false,
       });
       const logo = new three.Sprite(material);
       const [x, y, z] = positions[index];
