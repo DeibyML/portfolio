@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { MotionService, paletteRgb } from '../../core/motion.service';
 import { ThemeService } from '../../core/theme.service';
+import { TECH_ICONS } from './tech-icons';
 import type * as THREE from 'three';
 
 /**
@@ -100,6 +101,37 @@ export class HeroScene {
     );
     torus.rotation.x = Math.PI / 2.6;
     group.add(icosahedron, torus);
+
+    const techOrbit = new three.Group();
+    const positions = [
+      [-1.45, 0.7, 0.35],
+      [1.35, 0.8, -0.35],
+      [-0.55, -1.45, 0.5],
+      [0.75, -1.2, -0.7],
+      [1.55, -0.15, 0.45],
+      [-1.55, -0.35, -0.4],
+      [0.1, 1.45, 0.7],
+      [0.55, 0.1, 1.25],
+      [-0.8, 1.1, -0.8],
+      [1.1, 0.25, -1.05],
+    ] as const;
+    const techMaterials = TECH_ICONS.map(({ src }, index) => {
+      const texture = new three.TextureLoader().load(src);
+      texture.colorSpace = three.SRGBColorSpace;
+      const material = new three.SpriteMaterial({
+        map: texture,
+        transparent: true,
+        opacity: 0.38,
+        depthWrite: false,
+      });
+      const logo = new three.Sprite(material);
+      const [x, y, z] = positions[index];
+      logo.position.set(x, y, z);
+      logo.scale.setScalar(0.42);
+      techOrbit.add(logo);
+      return material;
+    });
+    group.add(techOrbit);
     scene.add(group);
 
     const render = () => renderer.render(scene, camera);
@@ -121,6 +153,10 @@ export class HeroScene {
       // Static piece: one frame, no loop, no listeners.
       this.destroyRef.onDestroy(() => {
         resize.disconnect();
+        techMaterials.forEach((material) => {
+          material.map?.dispose();
+          material.dispose();
+        });
         renderer.dispose();
       });
       return;
@@ -145,6 +181,9 @@ export class HeroScene {
       group.rotation.y += delta * 0.00012;
       icosahedron.rotation.y += delta * 0.00008;
       torus.rotation.z -= delta * 0.00005;
+      techOrbit.rotation.x -= delta * 0.00007;
+      techOrbit.rotation.y += delta * 0.0001;
+      techOrbit.rotation.z += delta * 0.00004;
       // Scroll advances the piece; the pointer nudges it.
       const targetX = pointer.y * 0.22 + scrollY * 0.0006;
       const targetY = pointer.x * 0.3;
@@ -168,6 +207,10 @@ export class HeroScene {
       io.disconnect();
       resize.disconnect();
       removeEventListener('mousemove', onMouse);
+      techMaterials.forEach((material) => {
+        material.map?.dispose();
+        material.dispose();
+      });
       renderer.dispose();
     });
   }
