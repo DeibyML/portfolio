@@ -46,7 +46,11 @@ jobs:
       - name: Build
         run: npm run build -- --base-href "${{ steps.pages.outputs.base_path }}/"
       - name: Support direct language URLs
-        run: cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
+        run: |
+          mkdir -p dist/portfolio/browser/fr dist/portfolio/browser/es
+          cp dist/portfolio/browser/index.html dist/portfolio/browser/fr/index.html
+          cp dist/portfolio/browser/index.html dist/portfolio/browser/es/index.html
+          cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
