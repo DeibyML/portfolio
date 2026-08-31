@@ -4,5 +4,6 @@ describe('TECH_ICONS', () => {
   it('maps each hero technology to a local asset', () => {
     expect(TECH_ICONS).toHaveLength(10);
     expect(TECH_ICONS.every(({ src }) => src.startsWith('assets/tech/'))).toBe(true);
+    expect(TECH_ICONS.every(({ src }) => src.endsWith('.png'))).toBe(true);
   });
 });
