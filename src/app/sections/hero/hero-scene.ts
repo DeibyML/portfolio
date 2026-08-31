@@ -121,14 +121,14 @@ export class HeroScene {
       const material = new three.SpriteMaterial({
         map: texture,
         transparent: true,
-        opacity: 0.62,
+        opacity: 0.42,
         depthWrite: false,
         depthTest: false,
       });
       const logo = new three.Sprite(material);
       const [x, y, z] = positions[index];
       logo.position.set(x, y, z);
-      logo.scale.setScalar(0.58);
+      logo.scale.setScalar(0.36);
       techOrbit.add(logo);
       return material;
     });
