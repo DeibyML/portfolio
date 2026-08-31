@@ -1,6 +1,8 @@
 <header class="site-header" [class.scrolled]="scrolled()">
   <div class="container inner">
-    <a class="logo display" href="#top" (click)="closeMenu()">DM<span class="accent">.</span></a>
+    <a class="logo" href="#top" (click)="closeMenu()" aria-label="Deiby Montoya">
+      <img src="assets/dm-mark.svg" alt="" />
+    </a>
 
     <nav class="desktop-nav" [attr.aria-label]="i18n.t('a11y.mainNav')">
       @for (item of nav; track item.href; let i = $index) {

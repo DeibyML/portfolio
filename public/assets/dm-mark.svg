@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <title>Deiby Montoya</title>
+  <rect width="128" height="128" rx="28" fill="#0E0C09"/>
+  <path fill="#D98A57" fill-rule="evenodd" d="M20 24h30l24 40-24 40H20V24Zm16 16v48h6l14-24-14-24h-6Z" clip-rule="evenodd"/>
+  <path fill="#EDE6DA" d="M70 104V24l19 25 19-25v80H94V50L89 57 84 50v54H70Z"/>
+</svg>
