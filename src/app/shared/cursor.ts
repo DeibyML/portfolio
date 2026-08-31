@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, ElementRef, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  ElementRef,
+  inject,
+} from '@angular/core';
 import { MotionService } from '../core/motion.service';
 
 /**
@@ -63,11 +70,13 @@ import { MotionService } from '../core/motion.service';
     }
   `,
 })
-export class Cursor {
-  constructor() {
-    const host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
-    const motion = inject(MotionService);
-    const destroyRef = inject(DestroyRef);
+export class Cursor implements AfterViewInit {
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
+  private readonly motion = inject(MotionService);
+  private readonly destroyRef = inject(DestroyRef);
+
+  ngAfterViewInit(): void {
+    const { host, motion, destroyRef } = this;
 
     if (!motion.interactive) {
       return;

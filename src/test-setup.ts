@@ -16,6 +16,11 @@ window.matchMedia ??= (query: string): MediaQueryList =>
     dispatchEvent: () => false,
   }) as MediaQueryList;
 
+// jsdom exposes getContext but cannot implement canvas without a native
+// renderer; returning null exercises the app's graceful no-canvas path.
+HTMLCanvasElement.prototype.getContext = (() =>
+  null) as typeof HTMLCanvasElement.prototype.getContext;
+
 window.ResizeObserver ??= class {
   observe(): void {}
   unobserve(): void {}
