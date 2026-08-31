@@ -52,6 +52,7 @@ Every background, border, glow and hover state is computed from these via `rgb()
 Static output — any host works (Netlify, Vercel, Cloudflare Pages, GitHub Pages). Publish directory: `dist/portfolio/browser`.
 
 For GitHub Pages under a subpath, build with `ng build --base-href /<repo-name>/`.
+The live language URLs are `/portfolio/` for English, `/portfolio/fr` for French and `/portfolio/es` for Spanish. The GitHub Pages workflow publishes a `404.html` fallback so shared language URLs load the app directly.
 
 ## Publishing on a custom domain (cheap)
 
@@ -76,4 +77,4 @@ The site is fully static, so hosting is free; the only cost is the domain (~US$1
 
 Want to try before buying a domain? Step 3 already gives you a free `*.pages.dev` URL.
 
-There is no router in this app, so no SPA redirect config is needed. If you ever add routes, create a `_redirects` file containing `/* /index.html 200`.
+There is no Angular router in this app. Language paths use the History API; the GitHub Pages workflow provides the direct-load fallback. If you ever add more SPA routes on Cloudflare Pages, create a `_redirects` file containing `/* /index.html 200`.

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslationKey } from '../../core/i18n/translations';
-import { EDUCATION, EXPERIENCE, PROFILE } from '../../data/profile';
+import { EDUCATION, EXPERIENCE, PROFILE, SKILL_GROUPS } from '../../data/profile';
 import { CountupDirective } from '../../shared/countup.directive';
 import { DotMeter } from '../../shared/dot-meter';
 import { RevealDirective } from '../../shared/reveal.directive';
@@ -35,7 +35,7 @@ export class About {
   protected readonly stats: { value: string; labelKey: TranslationKey }[] = [
     { value: `${new Date().getFullYear() - PROFILE.careerStart}+`, labelKey: 'stats.years' },
     { value: `${EXPERIENCE.length}`, labelKey: 'stats.companies' },
-    { value: '2', labelKey: 'stats.countries' },
+    { value: `${SKILL_GROUPS.flatMap((group) => group.skills).length}`, labelKey: 'stats.skills' },
     { value: `${this.languages.length}`, labelKey: 'stats.languages' },
   ];
 }

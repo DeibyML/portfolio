@@ -214,6 +214,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: 'Agile / Scrum' },
       { name: 'Code Review' },
       { name: 'Mentoring' },
+      { name: 'Technical Leadership' },
     ],
   },
 ];

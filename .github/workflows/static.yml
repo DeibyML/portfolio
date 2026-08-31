@@ -45,6 +45,8 @@ jobs:
         run: npm test -- --watch=false
       - name: Build
         run: npm run build -- --base-href "${{ steps.pages.outputs.base_path }}/"
+      - name: Support direct language URLs
+        run: cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:

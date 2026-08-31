@@ -32,7 +32,7 @@ const en = {
   'hero.location': 'Toronto, Canada',
   'hero.role': 'Senior Fullstack Software Engineer',
   'hero.intro':
-    'I design and ship web products end to end, from architecture to the last interaction detail, with Angular, .NET and nearly a decade of production experience.',
+    'I design and ship web products end to end, lead technical decisions, and explore practical AI applications that make software more efficient.',
   'hero.ctaProjects': 'Selected work',
   'hero.ctaContact': 'Get in touch',
   'hero.scroll': 'Scroll',
@@ -41,9 +41,9 @@ const en = {
   'about.label': 'About',
   'about.title': 'From first commit to production.',
   'about.p1':
-    'I’m Deiby, a fullstack engineer based in Toronto. For nearly a decade I’ve built software for travel tech, broadcasting, telecom and finance, leading projects from requirements to production and staying long after release to make them better.',
+    'I’m Deiby, a fullstack engineer based in Toronto. For nearly a decade I’ve built software for travel tech, broadcasting, telecom and finance, leading technical decisions and projects from requirements to production, then staying close to the product after launch to make it better.',
   'about.p2':
-    'My home turf is the Angular + .NET stack, with serious mileage in React, Blazor and real-time systems. I care about clean architecture, honest estimates and interfaces that feel effortless. These days I’m channeling all of it into AI-assisted products.',
+    'My home turf is the Angular + .NET stack, with serious mileage in React, Blazor and real-time systems. Right now I’m actively exploring how to apply AI in industry: improving existing applications, automating repetitive work and turning complex processes into more efficient solutions. I bring technical leadership to that work, aligning architecture, guiding teams and carrying ideas through to production.',
   'about.factsLocation': 'Based in',
   'about.factsLanguages': 'Languages',
   'about.factsEducation': 'Education',
@@ -57,7 +57,7 @@ const en = {
   // Highlight stats
   'stats.years': 'Years of experience',
   'stats.companies': 'Companies & industries',
-  'stats.countries': 'Countries worked in',
+  'stats.skills': 'Skills & practices',
   'stats.languages': 'Working languages',
 
   // Experience
@@ -66,7 +66,7 @@ const en = {
   'exp.now': 'Now',
   'exp.triparc.role': 'Senior Software Developer',
   'exp.triparc.summary':
-    'Driving feature development across a large-scale travel-technology platform: leading the modernization of a legacy .NET web stack into Angular and .NET Core, and shipping end-to-end functionality with Entity Framework and SQL Server.',
+    'Driving feature development across a large-scale travel-technology platform and providing technical leadership for the modernization of a legacy .NET web stack into Angular and .NET Core. Shipping end-to-end functionality with Entity Framework and SQL Server.',
   'exp.enlace.role': 'Fullstack Software Developer',
   'exp.enlace.summary':
     'Built and maintained a video-streaming web platform for an international TV network, focusing on new features, performance and reliability, with Angular, .NET Core, Entity Framework and SQL Server.',
@@ -116,7 +116,7 @@ const en = {
   'skills.groupFrontend': 'Frontend',
   'skills.groupBackend': 'Backend',
   'skills.groupData': 'Data & Cloud',
-  'skills.groupPractices': 'Practices & Tooling',
+  'skills.groupPractices': 'Technical leadership & practices',
 
   // Education (degree names; institutions stay literal)
   'edu.lambton': 'Computer Software & Database Development',
@@ -154,7 +154,7 @@ const fr: Record<TranslationKey, string> = {
   'hero.location': 'Toronto, Canada',
   'hero.role': 'Ingénieur logiciel fullstack senior',
   'hero.intro':
-    'Je conçois et livre des produits web de bout en bout, de l’architecture au moindre détail d’interaction, avec Angular, .NET et près de dix ans d’expérience en production.',
+    'Je conçois et livre des produits web de bout en bout, je pilote les décisions techniques et j’explore des applications concrètes de l’IA pour rendre les logiciels plus efficaces.',
   'hero.ctaProjects': 'Travaux choisis',
   'hero.ctaContact': 'Me contacter',
   'hero.scroll': 'Défiler',
@@ -162,9 +162,9 @@ const fr: Record<TranslationKey, string> = {
   'about.label': 'À propos',
   'about.title': 'Du premier commit à la production.',
   'about.p1':
-    'Je suis Deiby, ingénieur fullstack installé à Toronto. Depuis près de dix ans, je développe des logiciels pour la travel tech, l’audiovisuel, les télécoms et la finance, en menant les projets des exigences jusqu’à la production et en continuant de les améliorer bien après la mise en ligne.',
+    'Je suis Deiby, ingénieur fullstack installé à Toronto. Depuis près de dix ans, je développe des logiciels pour la travel tech, l’audiovisuel, les télécoms et la finance, en pilotant les décisions techniques et les projets des exigences jusqu’à la production, puis en continuant à les améliorer après leur mise en ligne.',
   'about.p2':
-    'Mon terrain de jeu, c’est la stack Angular + .NET, avec une solide expérience de React, Blazor et des systèmes temps réel. Je tiens à une architecture propre, des estimations honnêtes et des interfaces qui semblent évidentes. Ces temps-ci, je mets tout cela au service de produits assistés par l’IA.',
+    'Mon terrain de jeu, c’est la stack Angular + .NET, avec une solide expérience de React, Blazor et des systèmes temps réel. En ce moment, j’explore activement l’application de l’IA à l’industrie : améliorer les applications existantes, automatiser les tâches répétitives et transformer des processus complexes en solutions plus efficaces. J’apporte également un leadership technique en alignant l’architecture, en accompagnant les équipes et en menant les idées jusqu’à la production.',
   'about.factsLocation': 'Basé à',
   'about.factsLanguages': 'Langues',
   'about.factsEducation': 'Formation',
@@ -177,7 +177,7 @@ const fr: Record<TranslationKey, string> = {
 
   'stats.years': 'Années d’expérience',
   'stats.companies': 'Entreprises et secteurs',
-  'stats.countries': 'Pays d’exercice',
+  'stats.skills': 'Compétences et pratiques',
   'stats.languages': 'Langues de travail',
 
   'exp.label': 'Parcours',
@@ -185,7 +185,7 @@ const fr: Record<TranslationKey, string> = {
   'exp.now': 'Auj.',
   'exp.triparc.role': 'Développeur logiciel senior',
   'exp.triparc.summary':
-    'Développement de fonctionnalités sur une plateforme de technologie de voyage à grande échelle : modernisation d’une stack web .NET héritée vers Angular et .NET Core, et livraison de fonctionnalités de bout en bout avec Entity Framework et SQL Server.',
+    'Développement de fonctionnalités sur une plateforme de technologie de voyage à grande échelle et leadership technique pour moderniser une stack web .NET héritée vers Angular et .NET Core. Livraison de fonctionnalités de bout en bout avec Entity Framework et SQL Server.',
   'exp.enlace.role': 'Développeur fullstack',
   'exp.enlace.summary':
     'Développement et maintenance d’une plateforme web de streaming vidéo pour une chaîne de télévision internationale, avec un accent sur les nouvelles fonctionnalités, la performance et la fiabilité, en Angular, .NET Core, Entity Framework et SQL Server.',
@@ -233,7 +233,7 @@ const fr: Record<TranslationKey, string> = {
   'skills.groupFrontend': 'Frontend',
   'skills.groupBackend': 'Backend',
   'skills.groupData': 'Données et cloud',
-  'skills.groupPractices': 'Pratiques et outils',
+  'skills.groupPractices': 'Leadership technique et pratiques',
 
   'edu.lambton': 'Développement logiciel et bases de données',
   'edu.tadeo': 'Ingénierie des systèmes',
@@ -267,7 +267,7 @@ const es: Record<TranslationKey, string> = {
   'hero.location': 'Toronto, Canadá',
   'hero.role': 'Ingeniero de software fullstack senior',
   'hero.intro':
-    'Diseño y entrego productos web de principio a fin, desde la arquitectura hasta el último detalle de interacción, con Angular, .NET y casi una década de experiencia en producción.',
+    'Diseño y entrego productos web de principio a fin, lidero decisiones técnicas y exploro aplicaciones prácticas de la IA para hacer el software más eficiente.',
   'hero.ctaProjects': 'Trabajo seleccionado',
   'hero.ctaContact': 'Hablemos',
   'hero.scroll': 'Desliza',
@@ -275,9 +275,9 @@ const es: Record<TranslationKey, string> = {
   'about.label': 'Sobre mí',
   'about.title': 'Del primer commit a producción.',
   'about.p1':
-    'Soy Deiby, ingeniero fullstack radicado en Toronto. Durante casi una década he construido software para travel tech, televisión, telecomunicaciones y finanzas, liderando proyectos desde los requisitos hasta producción y quedándome después del lanzamiento para hacerlos mejores.',
+    'Soy Deiby, ingeniero fullstack radicado en Toronto. Durante casi una década he construido software para travel tech, televisión, telecomunicaciones y finanzas, liderando decisiones técnicas y proyectos desde los requisitos hasta producción, y permaneciendo cerca del producto después del lanzamiento para mejorarlo.',
   'about.p2':
-    'Mi terreno natural es el stack Angular + .NET, con bastante kilometraje en React, Blazor y sistemas en tiempo real. Me importan la arquitectura limpia, las estimaciones honestas y las interfaces que se sienten naturales. Últimamente pongo todo eso al servicio de productos asistidos por IA.',
+    'Mi terreno natural es el stack Angular + .NET, con bastante kilometraje en React, Blazor y sistemas en tiempo real. Actualmente exploro activamente cómo aplicar la IA a la industria: mejorar aplicaciones existentes, automatizar tareas repetitivas y convertir procesos complejos en soluciones más eficientes. También aporto liderazgo técnico, alineando decisiones de arquitectura, guiando equipos y llevando las ideas hasta producción.',
   'about.factsLocation': 'Ubicado en',
   'about.factsLanguages': 'Idiomas',
   'about.factsEducation': 'Formación',
@@ -290,7 +290,7 @@ const es: Record<TranslationKey, string> = {
 
   'stats.years': 'Años de experiencia',
   'stats.companies': 'Empresas e industrias',
-  'stats.countries': 'Países de trabajo',
+  'stats.skills': 'Habilidades y prácticas',
   'stats.languages': 'Idiomas de trabajo',
 
   'exp.label': 'Experiencia',
@@ -298,7 +298,7 @@ const es: Record<TranslationKey, string> = {
   'exp.now': 'Hoy',
   'exp.triparc.role': 'Desarrollador de software senior',
   'exp.triparc.summary':
-    'Desarrollo de funcionalidades en una plataforma de tecnología de viajes a gran escala: liderando la modernización de un stack web .NET heredado hacia Angular y .NET Core, y entregando funcionalidad de extremo a extremo con Entity Framework y SQL Server.',
+    'Desarrollo de funcionalidades en una plataforma de tecnología de viajes a gran escala y liderazgo técnico para modernizar un stack web .NET heredado hacia Angular y .NET Core. Entrega de funcionalidad de extremo a extremo con Entity Framework y SQL Server.',
   'exp.enlace.role': 'Desarrollador fullstack',
   'exp.enlace.summary':
     'Construcción y mantenimiento de una plataforma web de streaming de video para una cadena de televisión internacional, con foco en nuevas funcionalidades, rendimiento y confiabilidad, usando Angular, .NET Core, Entity Framework y SQL Server.',
@@ -346,7 +346,7 @@ const es: Record<TranslationKey, string> = {
   'skills.groupFrontend': 'Frontend',
   'skills.groupBackend': 'Backend',
   'skills.groupData': 'Datos y cloud',
-  'skills.groupPractices': 'Prácticas y herramientas',
+  'skills.groupPractices': 'Liderazgo técnico y prácticas',
 
   'edu.lambton': 'Desarrollo de Software y Bases de Datos',
   'edu.tadeo': 'Ingeniería de Sistemas',

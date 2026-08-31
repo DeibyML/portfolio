@@ -3,10 +3,28 @@ import { LANGS, Lang, TRANSLATIONS, TranslationKey } from './translations';
 
 const STORAGE_KEY = 'portfolio.lang';
 
-/** English is the product default; stored preference wins on return visits. */
+function siteBasePath(): string {
+  const href = document.querySelector('base')?.getAttribute('href') ?? '/';
+  return new URL(href, location.href).pathname.replace(/\/?$/, '/');
+}
+
+function languageFromUrl(): Lang | undefined {
+  const path = location.pathname.replace(/\/?$/, '/');
+  const base = siteBasePath();
+  const segment = path.startsWith(base) ? path.slice(base.length).replace(/^\/+|\/+$/g, '') : '';
+  return segment === 'fr' || segment === 'es' ? segment : undefined;
+}
+
+/** A valid URL language wins; the base URL is always English. */
 function initialLang(): Lang {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  return LANGS.includes(stored as Lang) ? (stored as Lang) : 'en';
+  return languageFromUrl() ?? 'en';
+}
+
+function updateLanguageUrl(lang: Lang): void {
+  const url = new URL(location.href);
+  const base = siteBasePath();
+  url.pathname = lang === 'en' ? base : `${base}${lang}`;
+  history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
 }
 
 /**
@@ -36,5 +54,6 @@ export class I18nService {
 
   setLang(lang: Lang): void {
     this.lang.set(lang);
+    updateLanguageUrl(lang);
   }
 }
